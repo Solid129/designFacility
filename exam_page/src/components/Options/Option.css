@@ -1,0 +1,21 @@
+.Option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.optionText{
+    border:1px solid rgb(0, 243, 252);
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    margin: 10px;
+    font-weight: 600;
+    font-size: 25px;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.selected{
+    background-color: #7ec0c2;
+}

@@ -1,0 +1,20 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Timer{
+    background-color: #00c2db;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 15px;
+    height: 30px;
+    font-size: 20px;
+    width: 150px;
+  }
+
+  .Title{
+      margin-right: 55%;
+  }

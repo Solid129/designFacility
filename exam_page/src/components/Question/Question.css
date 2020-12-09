@@ -1,0 +1,10 @@
+.Qnum{
+    color: mediumturquoise;
+    text-decoration: underline;
+}
+
+.Qtext{
+    text-align: center;
+    margin: 50px;
+    font-size: 25px;
+}

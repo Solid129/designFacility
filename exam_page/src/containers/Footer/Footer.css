@@ -1,0 +1,25 @@
+.Footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0a3c42;
+    margin-bottom: 4px;
+    height: 50px;
+}
+
+.buttons{
+    background-color: #ffffff;
+    color: #00a5a5;
+    border-radius:10px;
+    height: 40px;
+    margin: 10px;
+}
+
+.Savebutton{
+    border-radius:10px;
+    height: 40px;
+    margin: 10px;
+    background-color: #00a5a5;
+    color: #ffffff;
+    margin-left: 40%;
+}
