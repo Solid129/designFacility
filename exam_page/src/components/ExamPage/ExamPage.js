@@ -54,7 +54,6 @@ class ExamPage extends Component {
 
     selectSection = (index, name) => {
         if (this.state.currentSection.name) {
-            console.log(this.state.currentSection.name);
             document.getElementById(this.state.currentSection.name).className = "Sections";
         }
         document.getElementById(name).className = "selectedSection";
@@ -123,7 +122,6 @@ class ExamPage extends Component {
         });
         if (prevQ > 0) {
             this.selectQuestion(prevQ);
-            console.log("prev");
         } else if (prevS >= 0) {
             newSection = Object.keys(this.state.exam.sections[prevS]);
             var question = this.state.exam.sections[prevS][newSection[0]].length;
@@ -159,7 +157,6 @@ class ExamPage extends Component {
         });
         if (nextQ <= this.state.exam.sections[section.index][section.name].length) {
             this.selectQuestion(nextQ);
-            console.log("next");
         } else if (section.index + 1 < this.state.exam.sections.length) {
             var newSectionName = Object.keys(this.state.exam.sections[section.index + 1]);
             this.selectSection(section.index + 1, newSectionName[0]);
@@ -198,7 +195,6 @@ class ExamPage extends Component {
         });
         if (nextQ <= this.state.exam.sections[section.index][section.name].length) {
             this.selectQuestion(nextQ);
-            console.log("next");
         } else if (section.index + 1 < this.state.exam.sections.length) {
             var newSectionName = Object.keys(this.state.exam.sections[section.index + 1]);
             this.selectSection(section.index + 1, newSectionName[0]);
@@ -221,7 +217,6 @@ class ExamPage extends Component {
         var sectionsList = <p>Error fetching sections!</p>;
         var question = <p>Please Select Section!</p>;
         var questionsList = <p>No section selected!</p>;
-        console.log(this.state);
         if (this.state.exam) {
             sectionsList = this.state.exam.sections.map((s, index) => {
                 return <Section
@@ -231,11 +226,8 @@ class ExamPage extends Component {
                     selected={() => this.selectSection(index, Object.keys(s)[0])} />
             });
             let i = this.state.currentSection;
-            console.log(this.state.currentSection);
             var sections = this.state.exam.sections;
-            console.log(sections);
             for (var [j, sec] of sections.entries()) {
-                console.log(j);
                 if (i.index === j) {
                     questionsList = sec[i.name].map((qu, index) => {
                         return <Questionbubble
@@ -269,7 +261,6 @@ class ExamPage extends Component {
                                     prevQuestion={this.prevQuestion}
                                     markQuestion={this.markQuestion}
                                 />;
-                                console.log(k);
                             }
                         }
                     }

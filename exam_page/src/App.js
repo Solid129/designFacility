@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      examStarted: false
+      examStarted: false,
+      errorMessage:""
     };
   }
 
@@ -20,11 +21,13 @@ class App extends Component {
           var newState = null;
           axios.get("http://5.181.217.46/DesignFacility/useGETMethodForTheResponse/Sumit_Kumar")
               .then(response => {
-                  console.log(response.data);
                   newState = response.data.exam;
                   this.setState({ exam: newState });
+              }).catch(e=>{
+                this.setState({
+                  errorMessage:e.message
+                });
               });
-          console.log(newState);
       }
 
   onStart = () => {
@@ -37,6 +40,9 @@ class App extends Component {
 
   render() {
     var exam = <StartPage onStart={this.onStart}></StartPage>;
+    if(this.state.errorMessage!==""){
+      exam = <h2>{this.state.errorMessage}</h2>
+    }
     if (this.state.examStarted) {
       exam = <ExamPage exam={this.state.exam} />
     }
